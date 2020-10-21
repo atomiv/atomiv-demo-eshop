@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,32 @@ namespace Atomiv.Demo.MvcWebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
+			ConfigureIdentityServer(services);
+		}
+
+		//added
+		private void ConfigureIdentityServer(IServiceCollection services)
+		{
+			var builder = services.AddAuthentication(options => SetAuthenticationOptions(options));
+
+			builder.AddCookie();
+			builder.AddOpenIdConnect(options => SetOpenIdConnectOptions(options));
+		}
+
+		private void SetOpenIdConnectOptions(OpenIdConnectOptions options)
+		{
+			options.Authority = "https://localhost:5001";
+			options.ClientId = "mvc-web-app";
+			options.RequireHttpsMetadata = true;
+			options.Scope.Add("profile");
+			options.Scope.Add("openid");
+			options.ResponseType = "code id_token";
+		}
+
+		private void SetAuthenticationOptions(AuthenticationOptions options)
+		{
+			options.DefaultScheme = Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme;
+			options.DefaultChallengeScheme = Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectDefaults.AuthenticationScheme;
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,9 +69,10 @@ namespace Atomiv.Demo.MvcWebApp
 			}
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
+			app.UseCookiePolicy();
 
 			app.UseRouting();
-
+			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>

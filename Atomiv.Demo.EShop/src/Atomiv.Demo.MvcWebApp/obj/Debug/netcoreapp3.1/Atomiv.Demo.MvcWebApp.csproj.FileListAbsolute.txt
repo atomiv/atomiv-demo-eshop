@@ -9,11 +9,8 @@ D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\b
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.pdb
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.Views.dll
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.Views.pdb
-D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.csprojAssemblyReference.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.AssemblyInfoInputs.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.AssemblyInfo.cs
-D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.csproj.CoreCompileInputs.cache
-D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.MvcApplicationPartsAssemblyInfo.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.RazorAssemblyInfo.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.RazorAssemblyInfo.cs
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.TagHelpers.input.cache
@@ -35,3 +32,14 @@ D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\o
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.pdb
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.genruntimeconfig.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.csproj.CopyComplete
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.csproj.CoreCompileInputs.cache
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.MvcApplicationPartsAssemblyInfo.cache

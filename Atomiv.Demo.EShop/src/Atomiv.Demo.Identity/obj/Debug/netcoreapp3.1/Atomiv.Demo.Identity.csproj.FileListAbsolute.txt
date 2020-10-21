@@ -82,7 +82,6 @@ D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\bi
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.csprojAssemblyReference.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.AssemblyInfoInputs.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.AssemblyInfo.cs
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.csproj.CoreCompileInputs.cache

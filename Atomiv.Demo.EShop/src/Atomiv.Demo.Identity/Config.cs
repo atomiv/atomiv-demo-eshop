@@ -53,6 +53,27 @@ namespace Atomiv.Demo.Identity
                     AllowOfflineAccess = true,
                     AllowedScopes = { "openid", "profile", "scope2" }
                 },
+
+
+                // mvc-web-app
+                new Client
+                {
+                    ClientId = "mvc-web-app",
+                    ClientName = "MVC Web App",
+                    ClientSecrets = { new Secret("49C1A7E1-0C79-4A89-A3D6-A37998FB86B0".Sha256()) },
+
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+
+                    RedirectUris = { "https://localhost:5002/signin-oidc" },
+                    //FrontChannelLogoutUri = "https://localhost:44300/signout-oidc",
+                    //PostLogoutRedirectUris = { "https://localhost:44300/signout-callback-oidc" },
+
+                    //AllowOfflineAccess = true,
+                    AllowedScopes = { "openid", "profile" },
+
+                    // MVC app + Identity Server doesn't work without this, but less secure method
+                    RequirePkce= false
+                },
             };
     }
 }
