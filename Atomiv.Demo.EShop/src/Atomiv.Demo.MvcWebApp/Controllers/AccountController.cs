@@ -17,5 +17,10 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 				Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectDefaults.AuthenticationScheme);
 		}
 
+		public ActionResult Logout()
+		{
+			return View();
+		}
+
 	}
 }

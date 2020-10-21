@@ -43,3 +43,4 @@ D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\b
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.csproj.CoreCompileInputs.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.MvcApplicationPartsAssemblyInfo.cache
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Logout.cshtml.g.cs
