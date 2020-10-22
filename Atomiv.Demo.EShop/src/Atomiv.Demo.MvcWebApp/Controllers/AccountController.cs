@@ -19,8 +19,12 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 
 		public ActionResult Logout()
 		{
-			return View();
+			return SignOut(new AuthenticationProperties() { RedirectUri = "Home/Index" },
+				Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectDefaults.AuthenticationScheme,
+				Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme);
+
 		}
+
 
 	}
 }

@@ -1,23 +1,51 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
+@*@using Microsoft.AspNetCore.Authentication*@
+
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h1 class="display-4">Welcome</h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-@if(Context.User.Identity.IsAuthenticated)
-{
-    var idToken = Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.GetTokenAsync(Context, "id_token");
-    var accessToken = Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.GetTokenAsync(Context, "access_token");
 
-    <ul>
-        <li>Id Token : @idToken.Result</li>
-        <li>Access Token : @accessToken.Result</li>
-        @foreach (var claim in Context.User.Claims)
+<h2>Claims</h2>
+
+<dl>
+	@foreach (var claim in User.Claims)
+	{
+		<dt>@claim.Type</dt>
+		<dd>@claim.Value</dd>
+}
+</dl>
+
+@*<h2>Properties</h2>
+
+<dl>
+	@foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items)
+	{
+		<dt>@prop.Key</dt>
+		<dd>@prop.Value</dd>
+}
+</dl>*@
+
+
+<br />
+----------------------------------
+
+@if (Context.User.Identity.IsAuthenticated)
+{
+	var idToken = Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.GetTokenAsync(Context, "id_token");
+	var accessToken = Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.GetTokenAsync(Context, "access_token");
+
+	<ul>
+		<li>Id Token : @idToken.Result</li>
+		<li>Access Token : @accessToken.Result</li>
+		@foreach (var claim in Context.User.Claims)
 		{
-            <li>@claim.Type : @claim.Value</li>
+			<li>@claim.Type : @claim.Value</li>
 		}
-    </ul>
+	</ul>
 }

@@ -47,6 +47,7 @@ namespace Atomiv.Demo.MvcWebApp
 			options.Scope.Add("profile");
 			options.Scope.Add("openid");
 			options.ResponseType = "code id_token";
+			options.Scope.Add("ordering-api");
 			options.UsePkce = false;
 			options.SaveTokens = true;
 		}
