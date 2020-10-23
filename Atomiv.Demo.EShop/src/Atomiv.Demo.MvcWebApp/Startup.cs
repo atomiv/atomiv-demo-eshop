@@ -44,7 +44,7 @@ namespace Atomiv.Demo.MvcWebApp
 
 				options.ClientId = "mvc-web-app";
 				options.ClientSecret = "49C1A7E1-0C79-4A89-A3D6-A37998FB86B0";
-				options.ResponseType = "code id_token";
+				options.ResponseType = "code";
 
 				options.RequireHttpsMetadata = true;
 
@@ -53,7 +53,7 @@ namespace Atomiv.Demo.MvcWebApp
 				options.Scope.Add("openid");
 				options.Scope.Add("ordering-api");
 
-				options.UsePkce = false;
+				options.UsePkce = true;
 				options.SaveTokens = true;
 			});
 		}
