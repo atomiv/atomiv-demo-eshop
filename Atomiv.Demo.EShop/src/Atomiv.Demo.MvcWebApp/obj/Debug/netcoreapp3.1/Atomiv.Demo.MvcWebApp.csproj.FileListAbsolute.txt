@@ -45,4 +45,4 @@ D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\o
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.MvcApplicationPartsAssemblyInfo.cache
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Logout.cshtml.g.cs
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\CallApi.cshtml.g.cs
-D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Atomiv.Demo.MvcWebApp.csprojAssemblyReference.cache
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.MvcWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\json.cshtml.g.cs

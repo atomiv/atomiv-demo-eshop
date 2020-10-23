@@ -28,7 +28,7 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 		}
 
 		//MUNAGA
-		public async Task<IActionResult> CallAPI()
+		public async Task<IActionResult> CallAPI2()
 		{
 			var apiUrl = "https://localhost:6001/api/weatherforecast/getdata";
 
@@ -54,7 +54,7 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 
 		// DON"t PRESS navlink button
 		//QUICKSTART
-		public async Task<IActionResult> CallApi2()
+		public async Task<IActionResult> CallApi()
 		{
 			var accessToken = await HttpContext.GetTokenAsync("access_token");
 

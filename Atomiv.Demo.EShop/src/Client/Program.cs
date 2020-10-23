@@ -46,7 +46,7 @@ namespace Client
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await apiClient.GetAsync("https://localhost:6001/identity");
+            var response = await apiClient.GetAsync("https://localhost:6001/api/weatherforecast/getdata");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);

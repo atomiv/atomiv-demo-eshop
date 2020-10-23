@@ -30,7 +30,7 @@ namespace Atomiv.Demo.MvcWebApp
 			services.AddControllersWithViews();
 
 			// why?
-			JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+			//JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
 			services.AddAuthentication(options =>
 			{
@@ -44,16 +44,16 @@ namespace Atomiv.Demo.MvcWebApp
 
 				options.ClientId = "mvc-web-app";
 				options.ClientSecret = "49C1A7E1-0C79-4A89-A3D6-A37998FB86B0";
-				options.ResponseType = "code";
+				options.ResponseType = "code id_token";
 
 				options.RequireHttpsMetadata = true;
 
-				//options.Scope.Clear();
-				//options.Scope.Add("profile");
-				//options.Scope.Add("openid");
+				options.Scope.Clear();
+				options.Scope.Add("profile");
+				options.Scope.Add("openid");
 				options.Scope.Add("ordering-api");
 
-				options.UsePkce = true;
+				options.UsePkce = false;
 				options.SaveTokens = true;
 			});
 		}
@@ -86,8 +86,8 @@ namespace Atomiv.Demo.MvcWebApp
 					pattern: "{controller=Home}/{action=Index}/{id?}");
 
 				//TODO
-				//endpoints.MapDefaultControllerRoute()
-				//	.RequireAuthorization();
+				endpoints.MapDefaultControllerRoute()
+                    .RequireAuthorization();
 			});
 		}
 	}

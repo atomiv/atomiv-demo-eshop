@@ -120,4 +120,3 @@ D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\ob
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.dll
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.pdb
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.genruntimeconfig.cache
-D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\Atomiv.Demo.Identity\obj\Debug\netcoreapp3.1\Atomiv.Demo.Identity.csprojAssemblyReference.cache

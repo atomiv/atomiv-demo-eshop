@@ -19,6 +19,8 @@ namespace Atomiv.Demo.Identity
         public static IEnumerable<ApiScope> ApiScopes =>
             new ApiScope[]
             {
+                new ApiScope("scope1"),
+                new ApiScope("scope2"),
                 new ApiScope("ordering-api", "Ordering API")
             };
 
@@ -50,7 +52,7 @@ namespace Atomiv.Demo.Identity
                     PostLogoutRedirectUris = { "https://localhost:44300/signout-callback-oidc" },
 
                     AllowOfflineAccess = true,
-                    AllowedScopes = { "openid", "profile" }
+                    AllowedScopes = { "openid", "profile", "scope2" }
                 },
 
 
@@ -61,16 +63,18 @@ namespace Atomiv.Demo.Identity
                     ClientName = "MVC Web App",
                     ClientSecrets = { new Secret("49C1A7E1-0C79-4A89-A3D6-A37998FB86B0".Sha256()) },
 
-                    AllowedGrantTypes = GrantTypes.Code,
+                    //HybridAndClientCredentials ///Hybrid
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
                     RedirectUris = { "https://localhost:5002/signin-oidc" },
                     FrontChannelLogoutUri = "https://localhost:5002/signout-oidc",
                     PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" },
 
+                    AllowOfflineAccess = true,
                     AllowedScopes = { "openid", "profile", "ordering-api" },
 
                     // MVC app + Identity Server doesn't work without this, but less secure method
-                    //RequirePkce= false
+                    RequirePkce= false
                 },
             };
     }
