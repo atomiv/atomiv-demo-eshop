@@ -69,16 +69,8 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 		// TODO - this is just a test, remove claims stuff - jeca
 		public IActionResult Privacy()
 		{
-			//var claims = HttpContext.User.Claims.Select(x => $"{x.Type}:{x.Value}");
-			//return Ok(new
-			//{
-			//	Name = "Values API - jeca",
-			//	Claims = claims.ToArray()
-			//});
+			return View();
 
-			//return View();
-
-			return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
 		}
 
 		//public IActionResult Logout()
