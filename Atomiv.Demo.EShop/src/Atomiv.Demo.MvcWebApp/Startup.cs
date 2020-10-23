@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Atomiv.Demo.MvcWebApp
 {
@@ -26,37 +28,36 @@ namespace Atomiv.Demo.MvcWebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
-			ConfigureIdentityServer(services);
+
+			// why?
+			JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+
+			services.AddAuthentication(options =>
+			{
+				options.DefaultScheme = "Cookies";
+				options.DefaultChallengeScheme = "oidc";
+			})
+			.AddCookie("Cookies")
+			.AddOpenIdConnect("oidc", options =>
+			{
+				options.Authority = "https://localhost:5001";
+
+				options.ClientId = "mvc-web-app";
+				options.ClientSecret = "49C1A7E1-0C79-4A89-A3D6-A37998FB86B0";
+				options.ResponseType = "code";
+
+				options.RequireHttpsMetadata = true;
+
+				//options.Scope.Clear();
+				//options.Scope.Add("profile");
+				//options.Scope.Add("openid");
+				options.Scope.Add("ordering-api");
+
+				options.UsePkce = true;
+				options.SaveTokens = true;
+			});
 		}
 
-		//added
-		private void ConfigureIdentityServer(IServiceCollection services)
-		{
-			var builder = services.AddAuthentication(options => SetAuthenticationOptions(options));
-
-			builder.AddCookie();
-			builder.AddOpenIdConnect(options => SetOpenIdConnectOptions(options));
-		}
-
-		private void SetOpenIdConnectOptions(OpenIdConnectOptions options)
-		{
-			options.Authority = "https://localhost:5001";
-			options.ClientId = "mvc-web-app";
-			options.ClientSecret = "49C1A7E1-0C79-4A89-A3D6-A37998FB86B0";
-			options.RequireHttpsMetadata = true;
-			options.Scope.Add("profile");
-			options.Scope.Add("openid");
-			options.ResponseType = "code id_token";
-			options.Scope.Add("ordering-api");
-			options.UsePkce = false;
-			options.SaveTokens = true;
-		}
-
-		private void SetAuthenticationOptions(AuthenticationOptions options)
-		{
-			options.DefaultScheme = Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme;
-			options.DefaultChallengeScheme = Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectDefaults.AuthenticationScheme;
-		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -73,7 +74,6 @@ namespace Atomiv.Demo.MvcWebApp
 			}
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
-			app.UseCookiePolicy();
 
 			app.UseRouting();
 			app.UseAuthentication();
@@ -84,6 +84,10 @@ namespace Atomiv.Demo.MvcWebApp
 				endpoints.MapControllerRoute(
 					name: "default",
 					pattern: "{controller=Home}/{action=Index}/{id?}");
+
+				//TODO
+				//endpoints.MapDefaultControllerRoute()
+				//	.RequireAuthorization();
 			});
 		}
 	}

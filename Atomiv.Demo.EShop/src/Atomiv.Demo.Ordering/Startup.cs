@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Atomiv.Demo.Ordering
 {
@@ -28,23 +29,30 @@ namespace Atomiv.Demo.Ordering
 		{
 			services.AddControllers();
 
-			//added
-			ConfigureIdentityServer(services);
+			services.AddAuthentication("Bearer")
+			.AddJwtBearer(options =>
+			{
+				options.Authority = "https://localhost:5001";
+				//options.Audience = "ordering-api";
+				//options.RequireHttpsMetadata = true;
+
+				options.TokenValidationParameters = new TokenValidationParameters
+				{
+					ValidateAudience = false
+				};
+			});
+
+			services.AddAuthorization(options =>
+			{
+				// ApiScope can be renamed i think
+				options.AddPolicy("ApiScope", policy =>
+				{
+					policy.RequireAuthenticatedUser();
+					policy.RequireClaim("scope", "ordering-api");
+				});
+			});
 		}
 
-		private void ConfigureIdentityServer(IServiceCollection services)
-		{
-			var builder = services.AddAuthentication(options => options.DefaultScheme = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme);
-
-			builder.AddJwtBearer(options => SetJwtBearerOptions(options));
-		}
-
-		private void SetJwtBearerOptions(JwtBearerOptions options)
-		{
-			options.Authority = "https://localhost:5001";
-			options.Audience = "ordering-api";
-			options.RequireHttpsMetadata = true;
-		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -57,12 +65,17 @@ namespace Atomiv.Demo.Ordering
 			app.UseHttpsRedirection();
 
 			app.UseRouting();
+
 			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
+
+				//TODO
+				//endpoints.MapControllers()
+				//.RequireAuthorization("ApiScope");
 			});
 		}
 	}

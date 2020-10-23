@@ -27,6 +27,7 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 			return View();
 		}
 
+		//MUNAGA
 		public async Task<IActionResult> CallAPI()
 		{
 			var apiUrl = "https://localhost:6001/api/weatherforecast/getdata";
@@ -51,6 +52,8 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 		}
 
 
+		// DON"t PRESS navlink button
+		//QUICKSTART
 		public async Task<IActionResult> CallApi2()
 		{
 			var accessToken = await HttpContext.GetTokenAsync("access_token");
@@ -63,18 +66,26 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 			return View("json");
 		}
 
-
+		// TODO - this is just a test, remove claims stuff - jeca
 		public IActionResult Privacy()
 		{
-			var claims = HttpContext.User.Claims.Select(x => $"{x.Type}:{x.Value}");
-			return Ok(new
-			{
-				Name = "Values API",
-				Claims = claims.ToArray()
-			});
+			//var claims = HttpContext.User.Claims.Select(x => $"{x.Type}:{x.Value}");
+			//return Ok(new
+			//{
+			//	Name = "Values API - jeca",
+			//	Claims = claims.ToArray()
+			//});
 
 			//return View();
+
+			return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
 		}
+
+		//public IActionResult Logout()
+		//{
+		//	return SignOut("Cookies", "oidc");
+		//}
+
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()

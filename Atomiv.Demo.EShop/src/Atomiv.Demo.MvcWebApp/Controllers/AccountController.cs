@@ -14,14 +14,13 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 		public ActionResult Login()
 		{
 			return Challenge(new AuthenticationProperties() { RedirectUri = "Home/Index" },
-				Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectDefaults.AuthenticationScheme);
+				"oidc");
 		}
 
 		public ActionResult Logout()
 		{
 			return SignOut(new AuthenticationProperties() { RedirectUri = "Home/Index" },
-				Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectDefaults.AuthenticationScheme,
-				Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme);
+				"Cookies", "oidc");
 
 		}
 

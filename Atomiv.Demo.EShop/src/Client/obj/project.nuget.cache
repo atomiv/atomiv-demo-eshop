@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Xb5Be4uTm1/nlHj5DfFYQ8BPU+ARfapiYb/bnv+6V2+5Ud5so1JFQige+HJofoxrbTg9I18jBmRWfsK5KuiXRw==",
+  "success": true,
+  "projectFilePath": "D:\\Github\\atomiv\\atomiv-demo-eshop\\Atomiv.Demo.EShop\\src\\Client\\Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.text.encodings.web\\4.7.0\\system.text.encodings.web.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

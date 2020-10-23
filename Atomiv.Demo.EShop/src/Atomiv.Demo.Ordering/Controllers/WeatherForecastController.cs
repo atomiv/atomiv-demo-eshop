@@ -13,24 +13,30 @@ namespace Atomiv.Demo.Ordering.Controllers
 	//[Authorize]
 	public class WeatherForecastController : ControllerBase
 	{
+		// MUNAGA
 		// GET api/weatherforecast
 		[HttpGet]
-		[Route("getdata")]
-		public ActionResult Get()
+		[Route("getdata2")]
+		//[Authorize]
+		public ActionResult Get2()
 		{
 			var claims = HttpContext.User.Claims.Select(x => $"{x.Type}:{x.Value}");
 			return Ok(new
 			{
-				Name = "Values API",
+				Name = "Values API - jeca",
 				Claims = claims.ToArray()
 			});
 		}
 
-		[Route("getdata2")]
-		public IActionResult Get2()
+		//QUICKSTART
+		[HttpGet]
+		[Route("getdata")]
+		//[Authorize]
+		public IActionResult Get()
 		{
 			return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
 		}
+
 
 		//private static readonly string[] Summaries = new[]
 		//{
