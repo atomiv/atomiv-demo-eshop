@@ -86,12 +86,11 @@ namespace Atomiv.Demo.Ordering
 
 			app.UseEndpoints(endpoints =>
 			{
-				// not in example JC
-				endpoints.MapControllers();
+				// default
+				//endpoints.MapControllers();
 
-				//TODO
-				//endpoints.MapControllers()
-				//.RequireAuthorization("ApiScope");
+				endpoints.MapControllers()
+				.RequireAuthorization("ApiScope");
 			});
 		}
 	}

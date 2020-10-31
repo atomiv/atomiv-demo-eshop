@@ -1,4 +1,4 @@
-/// <reference path="oidc-client.js" />
+/// <reference path="lib/oidc-client.js" />
 
 function log() {
     document.getElementById('results').innerText = '';
