@@ -22,8 +22,9 @@ namespace Atomiv.Demo.Identity
             {
                 //new ApiScope("scope1"),
                 //new ApiScope("scope2"),
-                new ApiScope("ordering-api", "Ordering API"),
-                new ApiScope("api1"),
+                // new ApiScope("ordering-api", "Ordering API"),
+                new ApiScope("ordering-api"),
+                // new ApiScope("api1"),
             };
 
         public static IEnumerable<Client> Clients =>
@@ -79,7 +80,7 @@ namespace Atomiv.Demo.Identity
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "ordering-api",
-                        "api1"
+                        // "api1"
                     }
                 }
             };
