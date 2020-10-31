@@ -52,7 +52,6 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 		}
 
 
-		// DON"t PRESS navlink button
 		//QUICKSTART
 		public async Task<IActionResult> CallApi()
 		{
@@ -66,7 +65,6 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 			return View("json");
 		}
 
-		// TODO - this is just a test, remove claims stuff - jeca
 		public IActionResult Privacy()
 		{
 			return View();

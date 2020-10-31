@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atomiv.Demo.Identity", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atomiv.Demo.MvcWebApp", "src\Atomiv.Demo.MvcWebApp\Atomiv.Demo.MvcWebApp.csproj", "{0D3E2A89-EA09-42C1-BDF8-85317388BF1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atomiv.Demo.Ordering", "src\Atomiv.Demo.Ordering\Atomiv.Demo.Ordering.csproj", "{B6F80C33-465F-471C-97B3-4E4E7FF3DDE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atomiv.Demo.Ordering", "src\Atomiv.Demo.Ordering\Atomiv.Demo.Ordering.csproj", "{B6F80C33-465F-471C-97B3-4E4E7FF3DDE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "src\Client\Client.csproj", "{267BFFE7-409A-4DF5-8A4C-71A0E435DDFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "src\Client\Client.csproj", "{267BFFE7-409A-4DF5-8A4C-71A0E435DDFB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptClient", "src\JavaScriptClient\JavaScriptClient.csproj", "{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,18 @@ Global
 		{267BFFE7-409A-4DF5-8A4C-71A0E435DDFB}.Release|x64.Build.0 = Release|Any CPU
 		{267BFFE7-409A-4DF5-8A4C-71A0E435DDFB}.Release|x86.ActiveCfg = Release|Any CPU
 		{267BFFE7-409A-4DF5-8A4C-71A0E435DDFB}.Release|x86.Build.0 = Release|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Debug|x64.Build.0 = Debug|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Debug|x86.Build.0 = Debug|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Release|x64.ActiveCfg = Release|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Release|x64.Build.0 = Release|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Release|x86.ActiveCfg = Release|Any CPU
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +94,7 @@ Global
 		{0D3E2A89-EA09-42C1-BDF8-85317388BF1E} = {09F6D992-6257-4333-8C5F-D55B0057E1CA}
 		{B6F80C33-465F-471C-97B3-4E4E7FF3DDE6} = {09F6D992-6257-4333-8C5F-D55B0057E1CA}
 		{267BFFE7-409A-4DF5-8A4C-71A0E435DDFB} = {09F6D992-6257-4333-8C5F-D55B0057E1CA}
+		{5CCA5A3C-FB0F-4036-A7A3-7EC9CC1A07FE} = {09F6D992-6257-4333-8C5F-D55B0057E1CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAE6E4FF-151E-4C3D-B8CE-B25909D6C25B}

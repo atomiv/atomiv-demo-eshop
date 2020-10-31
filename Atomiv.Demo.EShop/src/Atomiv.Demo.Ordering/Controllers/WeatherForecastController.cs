@@ -10,7 +10,7 @@ namespace Atomiv.Demo.Ordering.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	//[Authorize]
+	[Authorize]
 	public class WeatherForecastController : ControllerBase
 	{
 		// MUNAGA
@@ -32,7 +32,8 @@ namespace Atomiv.Demo.Ordering.Controllers
 		[Route("getdata")]
 		public IActionResult Get()
 		{
-			return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
+			var claims = from c in User.Claims select new { c.Type, c.Value };
+			return new JsonResult(claims);
 		}
 
 
