@@ -27,25 +27,26 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 			return View();
 		}
 
-		//MUNAGA
-		public async Task<IActionResult> CallAPI2()
+
+		public async Task<IActionResult> CallApi2()
 		{
 			var apiUrl = "https://localhost:6001/api/weatherforecast/getdata";
 
-			var accessToken = Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions.GetTokenAsync(HttpContext, "access_token");
+			var accessToken = AuthenticationHttpContextExtensions.GetTokenAsync(HttpContext, "access_token");
 			var client = new HttpClient();
 
-			client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken.Result);
+			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Result);
 
-			HttpResponseMessage response = await client.GetAsync(apiUrl);
-			if (response.IsSuccessStatusCode)
+			HttpResponseMessage content = await client.GetAsync(apiUrl);
+			if (content.IsSuccessStatusCode)
 			{
-				var json = await response.Content.ReadAsStringAsync();
+				var json = await content.Content.ReadAsStringAsync();
 				ViewData["json"] = json;
 			}
 			else
 			{
-				ViewData["json"] = "Error: " + response.StatusCode;
+				ViewData["json"] = "Error: " + content.StatusCode;
+				
 			}
 
 			return View();
@@ -53,7 +54,7 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 
 
 		//QUICKSTART
-		public async Task<IActionResult> CallApi()
+		public async Task<IActionResult> CallApi9()
 		{
 			var accessToken = await HttpContext.GetTokenAsync("access_token");
 
@@ -64,6 +65,31 @@ namespace Atomiv.Demo.MvcWebApp.Controllers
 			ViewBag.Json = JArray.Parse(content).ToString();
 			return View("json");
 		}
+
+		public async Task<IActionResult> CallApi()
+		{
+			var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+			var client = new HttpClient();
+			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+			
+			var content = await client.GetAsync("https://localhost:6001/api/weatherforecast/getdata");
+
+			if (content.IsSuccessStatusCode)
+			{
+				var body = await content.Content.ReadAsStringAsync();
+				var json = JArray.Parse(body).ToString();
+				ViewData["json"] = json;
+			}
+			else
+			{
+				ViewData["json"] = "Error: " + content.StatusCode;
+
+			}
+
+			return View("json");
+		}
+
 
 		public IActionResult Privacy()
 		{
