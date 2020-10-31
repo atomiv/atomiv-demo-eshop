@@ -17,3 +17,4 @@ D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\JavaScriptClient\obj\De
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\JavaScriptClient\obj\Debug\netcoreapp3.1\JavaScriptClient.dll
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\JavaScriptClient\obj\Debug\netcoreapp3.1\JavaScriptClient.pdb
 D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\JavaScriptClient\obj\Debug\netcoreapp3.1\JavaScriptClient.genruntimeconfig.cache
+D:\Github\atomiv\atomiv-demo-eshop\Atomiv.Demo.EShop\src\JavaScriptClient\bin\Debug\netcoreapp3.1\package-lock.json

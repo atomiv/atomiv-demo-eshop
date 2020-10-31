@@ -30,11 +30,9 @@ namespace Atomiv.Demo.Ordering
 			services.AddControllers();
 
 			services.AddAuthentication("Bearer")
-			.AddJwtBearer(options =>
+			.AddJwtBearer("Bearer", options =>
 			{
 				options.Authority = "https://localhost:5001";
-				//options.Audience = "ordering-api";
-				//options.RequireHttpsMetadata = true;
 
 				options.TokenValidationParameters = new TokenValidationParameters
 				{
@@ -51,26 +49,44 @@ namespace Atomiv.Demo.Ordering
 					policy.RequireClaim("scope", "ordering-api");
 				});
 			});
+
+			// for JavaScript Client
+			services.AddCors(options =>
+			{
+				// this defines a CORS policy called "default"
+				options.AddPolicy("default", policy =>
+				{
+					policy.WithOrigins("https://localhost:5003")
+						.AllowAnyHeader()
+						.AllowAnyMethod();
+				});
+			});
 		}
 
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			/* JC. not in example
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
 
 			app.UseHttpsRedirection();
+			*/
 
 			app.UseRouting();
+
+			// for JavaScriptClient
+			app.UseCors("default");
 
 			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
+				// not in example JC
 				endpoints.MapControllers();
 
 				//TODO
