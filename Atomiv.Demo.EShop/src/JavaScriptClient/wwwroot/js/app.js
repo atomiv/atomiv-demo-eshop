@@ -1,4 +1,7 @@
-/// <reference path="lib/oidc-client.js" />
+/// <reference path="../lib/oidc-client.js" />
+
+//$(document).ready(function () {
+
 
 function log() {
     document.getElementById('results').innerText = '';
@@ -58,3 +61,31 @@ function api() {
 function logout() {
     mgr.signoutRedirect();
 }
+
+// });
+
+
+
+
+/*
+ *     $('#login').click(function () {
+        mgr.signinRedirect();
+    });
+    $('#api').click(function () {
+        mgr.getUser().then(function (user) {
+            var url = "https://localhost:5001/api/test";
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.onload = function () {
+                log(xhr.status, JSON.parse(xhr.responseText));
+            };
+            xhr.setRequestHeader("Authorization", "Bearer " + user.access_token);
+            xhr.send();
+        });
+    });
+
+    $('#logout').click(function () {
+        mgr.signoutRedirect();
+    });
+    */
